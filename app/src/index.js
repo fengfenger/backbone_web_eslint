@@ -7,5 +7,5 @@ $(function indexMain() {
   // var mainView = new MainView();
   // console.log(mainView);
   // require('../stylesheets/index.scss');
-
+va
 });
