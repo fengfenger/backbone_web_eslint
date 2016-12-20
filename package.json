@@ -1,0 +1,70 @@
+{
+  "name": "yinyuetai_pc_live_video",
+  "version": "0.1.0",
+  "description": "饭趴",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --colors test/*.spec.js",
+    "start": "gulp server",
+    "dev": "webpack --watch --colors --config bin/webpack.dev.config.js",
+    "predev": "gulp rebuild:config",
+
+    "build": "gulp copy-to-dist",
+    "prebuild": "webpack --colors --config bin/webpack.product.config.js --optimize-minimize",
+
+    "beta": "npm run build",
+    "prebeta": "gulp rebuild:config",
+
+    "release": "NODE_ENV=product npm run build",
+    "prerelease": "NODE_ENV=product gulp rebuild:config",
+
+    "product": "npm run build",
+    "preproduct": "set NODE_ENV=product gulp rebuild:config",
+
+    "eslint": "eslint app/src/ app/stylesheets",
+    "precommit": "npm run eslint"
+  },
+  "repository": {
+    "type": "git"
+  },
+  "keywords": [
+    "yeoman-generator"
+  ],
+  "author": "icepy",
+  "bugs": {
+    "url": ""
+  },
+  "homepage": "",
+  "devDependencies": {
+    "browser-sync": "^2.11.2",
+    "chai": "^3.5.0",
+    "css-loader": "^0.23.1",
+    "eslint": "^2.7.0",
+    "eslint-config-airbnb": "^7.0.0",
+    "eslint-loader": "^1.3.0",
+    "eslint-plugin-import": "^1.4.0",
+    "eslint-plugin-jsx-a11y": "^0.6.2",
+    "eslint-plugin-react": "^4.3.0",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "file-loader": "^0.8.5",
+    "glob": "^7.0.3",
+    "gulp": "^3.9.1",
+    "gulp-util": "^3.0.7",
+    "html-webpack-plugin": "^2.15.0",
+    "husky": "^0.11.4",
+    "jade": "^1.11.0",
+    "jade-loader": "^0.8.0",
+    "mocha": "^2.4.5",
+    "node-sass": "^3.5.1",
+    "raw-loader": "^0.5.1",
+    "rimraf": "^2.5.2",
+    "sass-loader": "^3.2.0",
+    "style-loader": "^0.13.1",
+    "url-loader": "^0.5.7",
+    "webpack": "^1.12.15"
+  },
+  "dependencies": {
+    "auxiliary-additions": "0.0.3",
+    "base-extend-backbone": "^0.1.4"
+  }
+}
